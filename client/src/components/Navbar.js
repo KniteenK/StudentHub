@@ -1,28 +1,24 @@
 import { useTheme } from "@emotion/react";
 import {
-  Avatar,
+  Button,
   IconButton,
   Stack,
   TextField,
-  Typography,
-  Button,
-  InputAdornment,
+  Typography
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import "react-icons/ai";
-import "react-icons/ri";
 import {
-  AiFillFileText,
   AiFillHome,
   AiFillMessage,
-  AiOutlineSearch,
+  AiOutlineSearch
 } from "react-icons/ai";
+import "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 import { isLoggedIn, logoutUser } from "../helpers/authHelper";
 import UserAvatar from "./UserAvatar";
 import HorizontalStack from "./util/HorizontalStack";
-import { RiContrast2Line } from "react-icons/ri";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -79,11 +75,7 @@ const Navbar = () => {
         spacing={!mobile ? 2 : 0}
       >
         <HorizontalStack>
-          <AiFillFileText
-            size={33}
-            color={theme.palette.primary.main}
-            onClick={() => navigate("/")}
-          />
+          
           <Typography
             sx={{ display: mobile ? "none" : "block" }}
             variant={navbarWidth ? "h6" : "h4"}
@@ -91,7 +83,7 @@ const Navbar = () => {
             color={theme.palette.primary.main}
           >
             {/* <Link to="/" color="inherit"> */}
-              PostIt
+            StudentHub
             {/* </Link> */}
           </Typography>
         </HorizontalStack>

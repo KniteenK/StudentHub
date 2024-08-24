@@ -1,15 +1,14 @@
 import { Card, Grid } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { getConversations } from "../../api/messages";
+import { isLoggedIn } from "../../helpers/authHelper";
 import Messages from "../Messages";
 import Navbar from "../Navbar";
 import UserMessengerEntries from "../UserMessengerEntries";
-import { getConversations } from "../../api/messages";
-import { isLoggedIn } from "../../helpers/authHelper";
-import { useLocation } from "react-router-dom";
-
 const MessengerView = () => {
-  const [conservant, setConservant] = useState(null);
+  const [conservant, setConservant] = useState(null); 
   const [conversations, setConversations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [width, setWindowWidth] = useState(0);
@@ -64,7 +63,9 @@ const MessengerView = () => {
   return (
     <Container>
       <Navbar />
-      <Box>
+      <Box
+        
+      >
         <Card sx={{ padding: 0 }}>
           <Grid
             container
