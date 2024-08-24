@@ -17,11 +17,13 @@ import theme from "./theme";
 import { useEffect } from "react";
 import PrivateRoute from "./components/PrivateRoute";
 import CreatePostView from "./components/views/CreatePostView";
+
 import ExploreView from "./components/views/ExploreView";
 import LoginView from "./components/views/LoginView";
 import MessengerView from "./components/views/MessengerView";
 import PostView from "./components/views/PostView";
 import ProfileView from "./components/views/ProfileView";
+import ReelsView from "./components/views/ReelsView"; // Import the ReelsView component
 import SearchView from "./components/views/SearchView";
 import SignupView from "./components/views/SignupView";
 import { initiateSocketConnection } from "./helpers/socketHelper";
@@ -48,6 +50,7 @@ function App() {
                 element={
                   <PrivateRoute>
                     <CreatePostView />
+                    
                   </PrivateRoute>
                 }
               />
@@ -63,6 +66,7 @@ function App() {
               <Route path="/users/:id" element={<ProfileView />} />
               <Route path="/login" element={<LoginView />} />
               <Route path="/signup" element={<SignupView />} />
+              <Route path="/reels" element={<ReelsView />} /> {/* Add the route for ReelsView */}
             </Routes>
           </Container>
           <Box component="footer" sx={{ backgroundColor: 'primary.main', padding: 2 }}>

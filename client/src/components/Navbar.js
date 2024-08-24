@@ -15,6 +15,7 @@ import {
   AiOutlineSearch
 } from "react-icons/ai";
 import "react-icons/ri";
+import { RiVideoFill } from "react-icons/ri"; // Import the Reel icon
 import { Link, useNavigate } from "react-router-dom";
 import { isLoggedIn, logoutUser } from "../helpers/authHelper";
 import UserAvatar from "./UserAvatar";
@@ -75,16 +76,13 @@ const Navbar = () => {
         spacing={!mobile ? 2 : 0}
       >
         <HorizontalStack>
-          
           <Typography
             sx={{ display: mobile ? "none" : "block" }}
             variant={navbarWidth ? "h6" : "h4"}
             mr={1}
             color={theme.palette.primary.main}
           >
-            {/* <Link to="/" color="inherit"> */}
             StudentHub
-            {/* </Link> */}
           </Typography>
         </HorizontalStack>
 
@@ -110,12 +108,16 @@ const Navbar = () => {
           <IconButton component={Link} to={"/"}>
             <AiFillHome />
           </IconButton>
+          <IconButton component={Link} to={"/reels"}>
+            <RiVideoFill /> {/* Add the Reel icon */}
+          </IconButton>
+          
           {user ? (
             <>
               <IconButton component={Link} to={"/messenger"}>
                 <AiFillMessage />
               </IconButton>
-              <IconButton component={Link}  to={"/users/" + username}>
+              <IconButton component={Link} to={"/users/" + username}>
                 <UserAvatar width={30} height={30} username={user.username} />
               </IconButton>
               <Button onClick={handleLogout}>Logout</Button>

@@ -5,13 +5,16 @@ import { useSearchParams } from "react-router-dom";
 import { getPosts, getUserLikedPosts } from "../api/posts";
 import { isLoggedIn } from "../helpers/authHelper";
 import CreatePost from "./CreatePost";
+import CreateReel from "./CreateReel";
 import Loading from "./Loading";
 import PostCard from "./PostCard";
+
 import SortBySelect from "./SortBySelect";
 import HorizontalStack from "./util/HorizontalStack";
 
 const PostBrowser = (props) => {
   const [posts, setPosts] = useState([]);
+
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(0);
   const [end, setEnd] = useState(false);
@@ -118,6 +121,7 @@ const PostBrowser = (props) => {
         <Card>
           <HorizontalStack justifyContent="space-between">
             {props.createPost && <CreatePost />}
+            {<CreateReel />}
             <SortBySelect
               onSortBy={handleSortBy}
               sortBy={sortBy}
