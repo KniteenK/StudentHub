@@ -215,18 +215,8 @@ const unlikePost = async (postId, user) => {
 };
 
 export {
-  getPost,
-  createPost,
-  updatePost,
-  deletePost,
-  getPosts,
+  createComment, createPost, deleteComment, deletePost, getComments, getPost, getPosts,
   getUserComments,
-  getUserLikedPosts,
-  getComments,
-  createComment,
-  deleteComment,
-  updateComment,
-  likePost,
-  unlikePost,
-  getUserLikes,
+  getUserLikedPosts, getUserLikes, likePost,
+  unlikePost, updateComment, updatePost
 };
