@@ -29,3 +29,8 @@ cd social-media-app
 cd client
 npm start
 ```
+
+
+## Tech Stack 
+
+ExpressJS, NodeJS, ReactJS, MongoDB, Socket.io
