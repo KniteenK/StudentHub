@@ -1,15 +1,9 @@
 import {
   Button,
-  FormControl,
-  InputAdornment,
-  InputLabel,
-  OutlinedInput,
   Stack,
-  TextField,
+  TextField
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
-import { sendMessage } from "../api/messages";
-import { isLoggedIn } from "../helpers/authHelper";
+import React, { useState } from "react";
 import HorizontalStack from "./util/HorizontalStack";
 
 const SendMessage = (props) => {
@@ -25,6 +19,7 @@ const SendMessage = (props) => {
       sx={{
         m: 2,
         height: "40px",
+        
       }}
       justifyContent="center"
     >

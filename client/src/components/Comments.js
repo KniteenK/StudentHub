@@ -1,11 +1,11 @@
 import { Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
-import Comment from "./Comment";
-import Loading from "./Loading";
-import { getComments } from "../api/posts";
 import { useParams } from "react-router-dom";
+import { getComments } from "../api/posts";
+import Comment from "./Comment";
 import CommentEditor from "./CommentEditor";
+import Loading from "./Loading";
 
 const Comments = () => {
   const [comments, setComments] = useState(null);
@@ -96,6 +96,7 @@ const Comments = () => {
 
   return comments ? (
     <Stack spacing={2}>
+      
       <CommentEditor
         addComment={addComment}
         label="What are your thoughts on this post?"
@@ -104,14 +105,17 @@ const Comments = () => {
       {comments.length > 0 ? (
         <Box pb={4}>
           {comments.map((comment, i) => (
-            <Comment
-              addComment={addComment}
-              removeComment={removeComment}
-              editComment={editComment}
-              comment={comment}
+            <Box
               key={comment._id}
-              depth={0}
-            />
+            >
+              <Comment
+                addComment={addComment}
+                removeComment={removeComment}
+                editComment={editComment}
+                comment={comment}
+                depth={0}
+              />
+            </Box>
           ))}
           {loading && <Loading />}
         </Box>

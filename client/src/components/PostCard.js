@@ -1,10 +1,9 @@
 import {
-  Button,
   Card,
   IconButton,
   Stack,
   Typography,
-  useTheme,
+  useTheme
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
@@ -18,15 +17,13 @@ import LikeBox from "./LikeBox";
 import PostContentBox from "./PostContentBox";
 import HorizontalStack from "./util/HorizontalStack";
 
-import {} from "react-icons/ai";
+import { } from "react-icons/ai";
 import ContentUpdateEditor from "./ContentUpdateEditor";
 import Markdown from "./Markdown";
 
-import "./postCard.css";
-import { MdCancel } from "react-icons/md";
 import { BiTrash } from "react-icons/bi";
-import { BsReplyFill } from "react-icons/bs";
-import UserLikePreview from "./UserLikePreview";
+import { MdCancel } from "react-icons/md";
+import "./postCard.css";
 
 const PostCard = (props) => {
   const { preview, removePost } = props;
@@ -95,22 +92,32 @@ const PostCard = (props) => {
     <Card sx={{ padding: 0 }} className="post-card">
       <Box className={preview}>
         <HorizontalStack spacing={0} alignItems="initial">
-          <Stack
-            justifyContent="space-between "
-            alignItems="center"
-            spacing={1}
-            sx={{
-              backgroundColor: "grey.100",
-              width: "50px",
-              padding: theme.spacing(1),
-            }}
-          >
-            <LikeBox
-              likeCount={likeCount}
-              liked={post.liked}
-              onLike={handleLike}
-            />
-          </Stack>
+        <Stack
+  justifyContent="center"
+  alignItems="center"
+  spacing={1}
+  sx={{
+    backgroundColor: "grey.100",
+    width: "50px",
+    padding: theme.spacing(1),
+  }}
+>
+  <LikeBox
+    likeCount={likeCount}
+    liked={post.liked}
+    onLike={handleLike}
+  />
+  <Stack sx={{ mt: 1 }} alignItems="center">
+    <AiFillMessage />
+    <Typography
+      variant="subtitle2"
+      color="text.secondary"
+      sx={{ fontWeight: "bold", mt: 0.5 }}
+    >
+      {post.commentCount}
+    </Typography>
+  </Stack>
+</Stack>
           <PostContentBox clickable={preview} post={post} editing={editing}>
             <HorizontalStack justifyContent="space-between">
               <ContentDetails
@@ -188,24 +195,7 @@ const PostCard = (props) => {
               </Typography>
             )}
 
-            <HorizontalStack sx={{ mt: 2 }} justifyContent="space-between">
-              <HorizontalStack>
-                <AiFillMessage />
-                <Typography
-                  variant="subtitle2"
-                  color="text.secondary"
-                  sx={{ fontWeight: "bold" }}
-                >
-                  {post.commentCount}
-                </Typography>
-              </HorizontalStack>
-              <Box>
-                <UserLikePreview
-                  postId={post._id}
-                  userLikePreview={post.userLikePreview}
-                />
-              </Box>
-            </HorizontalStack>
+            
           </PostContentBox>
         </HorizontalStack>
       </Box>
