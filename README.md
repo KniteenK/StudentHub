@@ -24,7 +24,6 @@ npm run server
 ```
 6) Start a new terminal and run react's development server
 ```
-cd social-media-app
 cd client
 npm start
 ```
