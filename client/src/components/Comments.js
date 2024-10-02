@@ -54,12 +54,12 @@ const Comments = () => {
     if (removedComment.parent) {
       const parentComment = findComment(removedComment.parent);
       parentComment.children = parentComment.children.filter(
-        (comment) => comment._id !== removedComment._id
+        (comment) => comment._id !== removedComment._id,
       );
       setRerender(!rerender);
     } else {
       setComments(
-        comments.filter((comment) => comment._id !== removedComment._id)
+        comments.filter((comment) => comment._id !== removedComment._id),
       );
     }
   };
@@ -96,7 +96,6 @@ const Comments = () => {
 
   return comments ? (
     <Stack spacing={2}>
-      
       <CommentEditor
         addComment={addComment}
         label="What are your thoughts on this post?"
@@ -105,9 +104,7 @@ const Comments = () => {
       {comments.length > 0 ? (
         <Box pb={4}>
           {comments.map((comment, i) => (
-            <Box
-              key={comment._id}
-            >
+            <Box key={comment._id}>
               <Comment
                 addComment={addComment}
                 removeComment={removeComment}

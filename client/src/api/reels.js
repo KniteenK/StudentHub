@@ -8,7 +8,7 @@ const getReels = async (token, query) => {
         headers: {
           "x-access-token": token,
         },
-      }
+      },
     );
     return await res.json();
   } catch (err) {
@@ -117,7 +117,7 @@ const getUserLikedReels = async (likerId, token, query) => {
         headers: {
           "x-access-token": token,
         },
-      }
+      },
     );
     return await res.json();
   } catch (err) {
@@ -133,7 +133,7 @@ const getUserReels = async (userId, token, query) => {
         headers: {
           "x-access-token": token,
         },
-      }
+      },
     );
     return await res.json();
   } catch (err) {

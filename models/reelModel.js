@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const reelSchema = new mongoose.Schema({
   url: {
@@ -7,7 +7,7 @@ const reelSchema = new mongoose.Schema({
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
+    ref: "User",
     required: true,
   },
   createdAt: {
@@ -16,6 +16,6 @@ const reelSchema = new mongoose.Schema({
   },
 });
 
-const Reel = mongoose.model('Reel', reelSchema);
+const Reel = mongoose.model("Reel", reelSchema);
 
 module.exports = Reel;

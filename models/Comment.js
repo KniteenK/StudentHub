@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const Post = require("./Post");
 const filter = require("../util/filter");
 
 const CommentSchema = new mongoose.Schema(
@@ -33,7 +32,7 @@ const CommentSchema = new mongoose.Schema(
       default: false,
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 CommentSchema.post("remove", async function (res, next) {

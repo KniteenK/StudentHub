@@ -4,16 +4,12 @@ import {
   IconButton,
   Stack,
   TextField,
-  Typography
+  Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import "react-icons/ai";
-import {
-  AiFillHome,
-  AiFillMessage,
-  AiOutlineSearch
-} from "react-icons/ai";
+import { AiFillHome, AiFillMessage, AiOutlineSearch } from "react-icons/ai";
 import "react-icons/ri";
 import { RiVideoFill } from "react-icons/ri"; // Import the Reel icon
 import { Link, useNavigate } from "react-router-dom";
@@ -111,7 +107,7 @@ const Navbar = () => {
           <IconButton component={Link} to={"/reels"}>
             <RiVideoFill /> {/* Add the Reel icon */}
           </IconButton>
-          
+
           {user ? (
             <>
               <IconButton component={Link} to={"/messenger"}>

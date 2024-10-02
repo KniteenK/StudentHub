@@ -44,7 +44,7 @@ const getUser = async (params) => {
 const getRandomUsers = async (query) => {
   try {
     const res = await fetch(
-      BASE_URL + "api/users/random?" + new URLSearchParams(query)
+      BASE_URL + "api/users/random?" + new URLSearchParams(query),
     );
     return res.json();
   } catch (err) {

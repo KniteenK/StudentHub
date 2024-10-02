@@ -36,7 +36,7 @@ const PostSchema = new mongoose.Schema(
       default: false,
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 PostSchema.pre("save", function (next) {

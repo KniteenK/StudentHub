@@ -9,8 +9,6 @@ const Sidebar = () => {
     <Stack spacing={2}>
       <FindUsers />
       <TopPosts />
-      
-
     </Stack>
   );
 };

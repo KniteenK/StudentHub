@@ -1,8 +1,4 @@
-import {
-  Button,
-  Stack,
-  TextField
-} from "@mui/material";
+import { Button, Stack, TextField } from "@mui/material";
 import React, { useState } from "react";
 import HorizontalStack from "./util/HorizontalStack";
 
@@ -19,7 +15,6 @@ const SendMessage = (props) => {
       sx={{
         m: 2,
         height: "40px",
-        
       }}
       justifyContent="center"
     >

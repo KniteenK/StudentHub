@@ -49,7 +49,7 @@ const PostBrowser = (props) => {
       data = await getUserLikedPosts(
         props.profileUser._id,
         user && user.token,
-        query
+        query,
       );
     }
 
@@ -154,11 +154,7 @@ const PostBrowser = (props) => {
         {end ? (
           <Stack py={5} alignItems="center">
             <Typography variant="h5" color="text.secondary" gutterBottom>
-              {posts.length > 0 ? (
-                <>End Of Posts </>
-              ) : (
-                <>No posts available</>
-              )}
+              {posts.length > 0 ? <>End Of Posts </> : <>No posts available</>}
             </Typography>
             <Button variant="text" size="small" onClick={handleBackToTop}>
               Back to top

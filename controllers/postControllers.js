@@ -1,12 +1,11 @@
 const mongoose = require("mongoose");
 const Post = require("../models/Post");
-const User = require("../models/User");
 const Comment = require("../models/Comment");
 const PostLike = require("../models/PostLike");
 const paginate = require("../util/paginate");
 const cooldown = new Set();
 
-USER_LIKES_PAGE_SIZE = 9;
+let USER_LIKES_PAGE_SIZE = 9;
 
 const createPost = async (req, res) => {
   try {
@@ -18,7 +17,7 @@ const createPost = async (req, res) => {
 
     if (cooldown.has(userId)) {
       throw new Error(
-        "You are posting too frequently. Please try again shortly."
+        "You are posting too frequently. Please try again shortly.",
       );
     }
 
@@ -214,7 +213,7 @@ const getPosts = async (req, res) => {
 
     if (search) {
       posts = posts.filter((post) =>
-        post.title.toLowerCase().includes(search.toLowerCase())
+        post.title.toLowerCase().includes(search.toLowerCase()),
       );
     }
 
