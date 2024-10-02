@@ -7,11 +7,7 @@ import "react-icons/bs";
 import "react-icons/md";
 import "react-router-dom";
 
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import theme from "./theme";
 
 import { useEffect } from "react";
@@ -37,10 +33,13 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BrowserRouter>
-        <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-          <Box component="header" sx={{ backgroundColor: 'primary.main', padding: 2 }}>
-            
-          </Box>
+        <Box
+          sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
+        >
+          <Box
+            component="header"
+            sx={{ backgroundColor: "primary.main", padding: 2 }}
+          ></Box>
           <Container component="main" sx={{ flex: 1, py: 3 }}>
             <Routes>
               <Route path="/" element={<ExploreView />} />
@@ -50,7 +49,6 @@ function App() {
                 element={
                   <PrivateRoute>
                     <CreatePostView />
-                    
                   </PrivateRoute>
                 }
               />
@@ -66,12 +64,14 @@ function App() {
               <Route path="/users/:id" element={<ProfileView />} />
               <Route path="/login" element={<LoginView />} />
               <Route path="/signup" element={<SignupView />} />
-              <Route path="/reels" element={<ReelsView />} /> {/* Add the route for ReelsView */}
+              <Route path="/reels" element={<ReelsView />} />{" "}
+              {/* Add the route for ReelsView */}
             </Routes>
           </Container>
-          <Box component="footer" sx={{ backgroundColor: 'primary.main', padding: 2 }}>
-
-          </Box>
+          <Box
+            component="footer"
+            sx={{ backgroundColor: "primary.main", padding: 2 }}
+          ></Box>
         </Box>
       </BrowserRouter>
     </ThemeProvider>

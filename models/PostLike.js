@@ -13,7 +13,7 @@ const PostLike = new mongoose.Schema(
       required: true,
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 module.exports = mongoose.model("postLike", PostLike);

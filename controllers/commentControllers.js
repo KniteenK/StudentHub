@@ -17,7 +17,7 @@ const createComment = async (req, res) => {
 
     if (cooldown.has(userId)) {
       throw new Error(
-        "You are commenting too frequently. Please try again shortly."
+        "You are commenting too frequently. Please try again shortly.",
       );
     }
 

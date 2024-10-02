@@ -10,7 +10,7 @@ const authSocket = (socket, next) => {
       socket.decoded = decoded;
       next();
     } catch (err) {
-      next(new Error("Authentication error"));
+      next(new Error("Authentication error", err));
     }
   } else {
     next(new Error("Authentication error"));

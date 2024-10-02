@@ -1,10 +1,4 @@
-import {
-  Card,
-  IconButton,
-  Stack,
-  Typography,
-  useTheme
-} from "@mui/material";
+import { Card, IconButton, Stack, Typography, useTheme } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { AiFillCheckCircle, AiFillEdit, AiFillMessage } from "react-icons/ai";
@@ -17,7 +11,7 @@ import LikeBox from "./LikeBox";
 import PostContentBox from "./PostContentBox";
 import HorizontalStack from "./util/HorizontalStack";
 
-import { } from "react-icons/ai";
+import {} from "react-icons/ai";
 import ContentUpdateEditor from "./ContentUpdateEditor";
 import Markdown from "./Markdown";
 
@@ -92,32 +86,32 @@ const PostCard = (props) => {
     <Card sx={{ padding: 0 }} className="post-card">
       <Box className={preview}>
         <HorizontalStack spacing={0} alignItems="initial">
-        <Stack
-  justifyContent="center"
-  alignItems="center"
-  spacing={1}
-  sx={{
-    backgroundColor: "grey.100",
-    width: "50px",
-    padding: theme.spacing(1),
-  }}
->
-  <LikeBox
-    likeCount={likeCount}
-    liked={post.liked}
-    onLike={handleLike}
-  />
-  <Stack sx={{ mt: 1 }} alignItems="center">
-    <AiFillMessage />
-    <Typography
-      variant="subtitle2"
-      color="text.secondary"
-      sx={{ fontWeight: "bold", mt: 0.5 }}
-    >
-      {post.commentCount}
-    </Typography>
-  </Stack>
-</Stack>
+          <Stack
+            justifyContent="center"
+            alignItems="center"
+            spacing={1}
+            sx={{
+              backgroundColor: "grey.100",
+              width: "50px",
+              padding: theme.spacing(1),
+            }}
+          >
+            <LikeBox
+              likeCount={likeCount}
+              liked={post.liked}
+              onLike={handleLike}
+            />
+            <Stack sx={{ mt: 1 }} alignItems="center">
+              <AiFillMessage />
+              <Typography
+                variant="subtitle2"
+                color="text.secondary"
+                sx={{ fontWeight: "bold", mt: 0.5 }}
+              >
+                {post.commentCount}
+              </Typography>
+            </Stack>
+          </Stack>
           <PostContentBox clickable={preview} post={post} editing={editing}>
             <HorizontalStack justifyContent="space-between">
               <ContentDetails
@@ -182,7 +176,7 @@ const PostCard = (props) => {
                   <Markdown content={post.content} />
                 </Box>
               ))}
-              {post.link && (
+            {post.link && (
               <Typography
                 variant="body2"
                 color="primary"
@@ -194,8 +188,6 @@ const PostCard = (props) => {
                 </a>
               </Typography>
             )}
-
-            
           </PostContentBox>
         </HorizontalStack>
       </Box>

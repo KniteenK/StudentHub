@@ -12,7 +12,7 @@ const getUserLikedPosts = async (likerId, token, query) => {
         headers: {
           "x-access-token": token,
         },
-      }
+      },
     );
     return await res.json();
   } catch (err) {
@@ -28,7 +28,7 @@ const getPosts = async (token, query) => {
         headers: {
           "x-access-token": token,
         },
-      }
+      },
     );
     return await res.json();
   } catch (err) {
@@ -58,7 +58,7 @@ const getUserLikes = async (postId, anchor) => {
         "/users?" +
         new URLSearchParams({
           anchor,
-        })
+        }),
     );
 
     return await res.json();
@@ -129,7 +129,7 @@ const getUserComments = async (params) => {
   try {
     const { id, query } = params;
     const res = await fetch(
-      BASE_URL + "api/comments/user/" + id + "?" + new URLSearchParams(query)
+      BASE_URL + "api/comments/user/" + id + "?" + new URLSearchParams(query),
     );
     return res.json();
   } catch (err) {
@@ -215,8 +215,18 @@ const unlikePost = async (postId, user) => {
 };
 
 export {
-  createComment, createPost, deleteComment, deletePost, getComments, getPost, getPosts,
+  createComment,
+  createPost,
+  deleteComment,
+  deletePost,
+  getComments,
+  getPost,
+  getPosts,
   getUserComments,
-  getUserLikedPosts, getUserLikes, likePost,
-  unlikePost, updateComment, updatePost
+  getUserLikedPosts,
+  getUserLikes,
+  likePost,
+  unlikePost,
+  updateComment,
+  updatePost,
 };

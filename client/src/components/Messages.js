@@ -97,7 +97,7 @@ const Messages = (props) => {
     }
 
     let newConversations = props.conversations.filter(
-      (conversationCompare) => conversation._id !== conversationCompare._id
+      (conversationCompare) => conversation._id !== conversationCompare._id,
     );
 
     newConversations.unshift(conversation);
@@ -112,7 +112,7 @@ const Messages = (props) => {
       "send-message",
       conversation.recipient._id,
       user.username,
-      content
+      content,
     );
   };
 
@@ -121,7 +121,7 @@ const Messages = (props) => {
 
     const conversation = props.getConversation(
       conversationsRef.current,
-      senderId
+      senderId,
     );
 
     console.log(username + " " + content);
@@ -140,7 +140,7 @@ const Messages = (props) => {
       conversation.lastMessageAt = Date.now();
 
       let newConversations = conversationsRef.current.filter(
-        (conversationCompare) => conversation._id !== conversationCompare._id
+        (conversationCompare) => conversation._id !== conversationCompare._id,
       );
 
       newConversations.unshift(conversation);

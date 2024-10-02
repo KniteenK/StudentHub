@@ -8,7 +8,7 @@ import Messages from "../Messages";
 import Navbar from "../Navbar";
 import UserMessengerEntries from "../UserMessengerEntries";
 const MessengerView = () => {
-  const [conservant, setConservant] = useState(null); 
+  const [conservant, setConservant] = useState(null);
   const [conversations, setConversations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [width, setWindowWidth] = useState(0);
@@ -63,9 +63,7 @@ const MessengerView = () => {
   return (
     <Container>
       <Navbar />
-      <Box
-        
-      >
+      <Box>
         <Card sx={{ padding: 0 }}>
           <Grid
             container

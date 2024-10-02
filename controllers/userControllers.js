@@ -1,10 +1,8 @@
 const User = require("../models/User");
 const Post = require("../models/Post");
-const PostLike = require("../models/PostLike");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const Follow = require("../models/Follow");
-const { default: mongoose } = require("mongoose");
 
 const getUserDict = (token, user) => {
   return {
